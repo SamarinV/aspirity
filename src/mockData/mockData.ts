@@ -1,30 +1,4 @@
-export type HistoryVacation = {
-  type: "Отпуск" | "Отгул"
-  startDate: string
-  endDate: string
-  countDay: number
-}
-
-type User = {
-  surname: string
-  name: string
-  patronymic: string
-  profession: string
-  visitingTime: string
-  imageUrl: string
-  location: {
-    country: string
-    city: string
-  }
-  vacation: {
-    statistics: {
-      available: number
-      planned: number
-      used: number
-    }
-    history: HistoryVacation[]
-  }
-}
+import { User } from "@/types";
 
 export const user : User = {
   surname: "Иванов",

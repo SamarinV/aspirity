@@ -1,6 +1,8 @@
-import { HistoryVacation, user } from "@/mockData/mockData"
+import { user } from "@/mockData/mockData"
+import { HistoryVacation } from "@/types"
 
-const HistoryBlock = () => {
+
+export const HistoryBlock = () => {
 
 	const blockWithDays = (item: HistoryVacation) => {
 		return (
@@ -27,6 +29,7 @@ const HistoryBlock = () => {
         <p className="text-subtitle2 text-dark-text-tertiary cursor-pointer">Посмотреть все</p>
       </div>
 
+      {/* decstop */}
       <div className="sm:hidden">
         <table className="min-w-full text-subtitle1">
           <thead>
@@ -48,6 +51,7 @@ const HistoryBlock = () => {
         </table>
       </div>
 
+      {/* mobile */}
       <div className="hidden sm:block">
         {user.vacation.history.map((item, index) => (
           <div key={index} className="border-t border-dark-border-primary py-4">
@@ -63,5 +67,3 @@ const HistoryBlock = () => {
     </>
   )
 }
-
-export default HistoryBlock

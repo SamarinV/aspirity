@@ -1,9 +1,10 @@
-import Avatar from "@/components/Avatar/Avatar"
 import imageAvatar from "@/assets/avatar.jpg"
 import { user } from "@/mockData/mockData"
+import { TabsTypeValue } from "@/types"
 import { Dispatch, SetStateAction } from "react"
+import { Avatar } from "../Avatar"
 
-export type TabsTypeValue = "mainInfo" | "vacation"
+
 
 type Tabs = {
   value: string
@@ -15,7 +16,7 @@ type Props = {
   setTabValue: Dispatch<SetStateAction<TabsTypeValue>>
 }
 
-const AboutUser = ({ tabValue, setTabValue }: Props) => {
+export const AboutUser = ({ tabValue, setTabValue }: Props) => {
   const tabs: Tabs[] = [
     { value: "ОСНОВНАЯ ИНФОРМАЦИЯ", type: "mainInfo" },
     { value: "ОТПУСК", type: "vacation" },
@@ -56,5 +57,3 @@ const AboutUser = ({ tabValue, setTabValue }: Props) => {
     </>
   )
 }
-
-export default AboutUser

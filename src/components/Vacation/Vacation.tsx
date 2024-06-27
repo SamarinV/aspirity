@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from "react"
-import HistoryBlock from "./HistoryBlock/HistoryBlock"
-import StatisticBlock from "./StatisticBlock/StatisticBlock"
+import { HistoryBlock } from "./HistoryBlock"
+import { StatisticBlock } from "./StatisticBlock"
 
-const Vacation = () => {
+
+export const Vacation = () => {
   return (
     <div className="grid grid-cols-6 grid-rows-1 gap-4 lg:flex lg:flex-col">
       <section className="col-span-2 bg-dark-bg-secondary p-10 rounded-2xl lg:p-4">
@@ -15,5 +15,3 @@ const Vacation = () => {
     </div>
   )
 }
-
-export default Vacation

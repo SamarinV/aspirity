@@ -1,15 +1,16 @@
 "use client"
 import iconArrowLeft from "@/assets/arrow-left.png"
-import AboutUser, { TabsTypeValue } from "@/components/AboutUser/AboutUser"
-import Header from "@/components/Header/Header"
-import Vacation from "@/components/Vacation/Vacation"
+import { AboutUser } from "@/components/AboutUser"
+import { Header } from "@/components/Header"
+import { Vacation } from "@/components/Vacation"
+import { TabsTypeValue } from "@/types"
 import Image from "next/image"
 import { useState } from "react"
 
 export default function Home() {
   const [tabValue, setTabValue] = useState<TabsTypeValue>("vacation")
   return (
-    <div className="flex min-h-screen max-w-screen-2xl px-5 flex-col mx-auto md:px-0 md:pb-6">
+    <div className="flex min-h-screen max-w-screen-2xl px-5 pb-6 flex-col mx-auto md:px-0">
       <Header />
       <main>
         <div className="inline-flex items-center my-2 py-2 px-4 rounded-sm hover:bg-dark-bg-modal cursor-pointer transition-all">

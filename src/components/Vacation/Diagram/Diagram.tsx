@@ -1,11 +1,10 @@
-"use client"
 import { user } from "@/mockData/mockData"
 import { Doughnut } from "react-chartjs-2"
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js"
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
-const Diagram = () => {
+export const Diagram = () => {
   const data = {
     datasets: [
       {
@@ -32,5 +31,3 @@ const Diagram = () => {
     </div>
   )
 }
-
-export default Diagram

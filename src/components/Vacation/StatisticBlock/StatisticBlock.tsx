@@ -1,8 +1,8 @@
-import Diagram from "../Diagram/Diagram"
-import * as Tooltip from "@radix-ui/react-tooltip"
 import { user } from "@/mockData/mockData"
+import * as Tooltip from "@radix-ui/react-tooltip"
+import { Diagram } from "../Diagram"
 
-const StatisticBlock = () => {
+export const StatisticBlock = () => {
   return (
     <>
       <h5 className="text-h5 flex items-center md:text-base">
@@ -48,5 +48,3 @@ const StatisticBlock = () => {
     </>
   )
 }
-
-export default StatisticBlock

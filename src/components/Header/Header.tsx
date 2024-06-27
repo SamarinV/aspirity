@@ -1,11 +1,11 @@
-import Image from "next/image"
-import logo from "@/assets/logo.png"
-import Avatar from "../Avatar/Avatar"
-import iconAvatar from "@/assets/avatar.jpg"
 import iconDown from "@/assets/arrow-down.png"
+import iconAvatar from "@/assets/avatar.jpg"
 import iconBurger from "@/assets/burger.png"
+import logo from "@/assets/logo.png"
+import Image from "next/image"
+import { Avatar } from "../Avatar"
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className="flex items-center justify-between py-6 md:py-7 md:px-4">
       <Image className="cursor-pointer" src={logo} alt="Aspirity" width={180} height={40} />
@@ -21,5 +21,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
