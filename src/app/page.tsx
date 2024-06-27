@@ -9,7 +9,7 @@ import { useState } from "react"
 export default function Home() {
   const [tabValue, setTabValue] = useState<TabsTypeValue>("vacation")
   return (
-    <div className="flex min-h-screen max-w-screen-2xl px-5 flex-col mx-auto">
+    <div className="flex min-h-screen max-w-screen-2xl px-5 flex-col mx-auto md:px-0 md:pb-6">
       <Header />
       <main>
         <div className="inline-flex items-center my-2 py-2 px-4 rounded-sm hover:bg-dark-bg-modal cursor-pointer transition-all">
@@ -18,7 +18,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col">
-          <section className="bg-dark-bg-secondary p-10 mb-4">
+          <section className="bg-dark-bg-secondary p-10 mb-4 rounded-2xl lg:p-6">
             <AboutUser tabValue={tabValue} setTabValue={setTabValue} />
           </section>
           {tabValue === "vacation" && <Vacation />}

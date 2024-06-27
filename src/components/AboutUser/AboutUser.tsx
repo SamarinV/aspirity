@@ -3,7 +3,7 @@ import imageAvatar from "@/assets/avatar.jpg"
 import { user } from "@/mockData/mockData"
 import { Dispatch, SetStateAction } from "react"
 
-export type TabsTypeValue = "mainInfo" | "vacation" | "equipment"
+export type TabsTypeValue = "mainInfo" | "vacation"
 
 type Tabs = {
   value: string
@@ -19,27 +19,26 @@ const AboutUser = ({ tabValue, setTabValue }: Props) => {
   const tabs: Tabs[] = [
     { value: "ОСНОВНАЯ ИНФОРМАЦИЯ", type: "mainInfo" },
     { value: "ОТПУСК", type: "vacation" },
-    { value: "ОБОРУДОВАНИЕ", type: "equipment" },
   ]
   return (
     <>
-      <div className="flex">
+      <div className="flex md:flex-col items-center">
         <Avatar size={160} url={imageAvatar} />
-        <div className="flex flex-col pl-12 py-6 justify-between">
-          <h2 className="text-custom-headline">{user.surname}</h2>
-          <h2 className="text-custom-headline">
+        <div className="flex flex-col pl-12 py-6 justify-between text-custom-headline md:text-center md:p-0 md:mt-4 md:text-2xl">
+          <h2>{user.surname}</h2>
+          <h2>
             {user.name} {user.patronymic}
           </h2>
         </div>
       </div>
-      <div className="ml-52 mt-2">
-        <p className="text-subtitle1 ">{user.profession}</p>
-        <p className="mt-4 text-subtitle1 ">
+      <div className="ml-52 mt-2 text-subtitle1 md:mt-6 md:ml-0 md:text-center">
+        <p className=" ">{user.profession}</p>
+        <p className="mt-4 md:mt-6">
           {user.location.city}, {user.location.country}{" "}
           <span className="text-dark-text-tertiary">• {user.visitingTime}</span>
         </p>
       </div>
-      <div className="flex mt-12">
+      <div className="flex mt-12 md:justify-center">
         {tabs.map((item, index) => {
           return (
             <p

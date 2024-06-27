@@ -17,11 +17,11 @@
 } */
 
 body {
-  /* color: rgb(var(--foreground-rgb)); */
+  /* font-size: 1rem; */
 }
-
-/* @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* 
+@media screen and (max-width: 1024px) {
+	body {
+		font-size: 0.2rem;
+	}
 } */

@@ -5,7 +5,7 @@ import { user } from "@/mockData/mockData"
 const StatisticBlock = () => {
   return (
     <>
-      <h5 className="text-h5 flex items-center">
+      <h5 className="text-h5 flex items-center md:text-base">
         Статистика{" "}
         <Tooltip.Provider delayDuration={300}>
           <Tooltip.Root>
@@ -16,7 +16,7 @@ const StatisticBlock = () => {
             </Tooltip.Trigger>
             <Tooltip.Portal>
               <Tooltip.Content className="TooltipContent" sideOffset={5} side="right">
-                <span className="text-subtitle2 py-1 px-2 bg-dark-bg-modal rounded-sm">1 раб. месяц = 3 дня отпуска</span>
+                <span className="text-subtitle2 py-1 px-2 bg-dark-bg-modal rounded-sm lg:text-subtitle2">1 раб. месяц = 3 дня отпуска</span>
               </Tooltip.Content>
             </Tooltip.Portal>
           </Tooltip.Root>

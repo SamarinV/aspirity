@@ -1,4 +1,4 @@
-type HistoryVacation = {
+export type HistoryVacation = {
   type: "Отпуск" | "Отгул"
   startDate: string
   endDate: string

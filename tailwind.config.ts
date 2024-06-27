@@ -86,6 +86,16 @@ const config: Config = {
         overline: ["0.75rem", { lineHeight: "2rem", fontWeight: 400 }],
       },
     },
+    screens: {
+      sm: { max: "640px" },
+      // => @media (min-width: 640px) { ... }
+
+      md: { max: "768px"},
+      // => @media (min-width: 768px) { ... }
+
+      lg: { max: "1024px"},
+      // => @media (min-width: 1024px) { ... }
+    },
   },
   plugins: [typography],
 }
