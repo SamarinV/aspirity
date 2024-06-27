@@ -1,8 +1,16 @@
+'use client'
+import { Modal } from "@/components/Modal"
 import { user } from "@/mockData/mockData"
 import { HistoryVacation } from "@/types"
+import { useState } from "react"
 
 
 export const HistoryBlock = () => {
+	const viewVacation = user.vacation.history.slice(0,5)
+	const [isModalOpen, setModalOpen] = useState(false)
+
+
+  const allVacation = user.vacation.history;
 
 	const blockWithDays = (item: HistoryVacation) => {
 		return (
@@ -23,10 +31,15 @@ export const HistoryBlock = () => {
     )
 	}
   return (
-    <>
-      <div className="flex justify-between md:mb-4">
+    <div>
+      <div className="flex justify-between items-center md:mb-4">
         <h5 className="text-h5 md:text-base">История отпусков</h5>
-        <p className="text-subtitle2 text-dark-text-tertiary cursor-pointer">Посмотреть все</p>
+        <p
+          onClick={() => setModalOpen(true)}
+          className="text-subtitle2 text-dark-text-tertiary px-2 rounded-sm transition-all cursor-pointer hover:bg-dark-bg-modal"
+        >
+          Посмотреть все
+        </p>
       </div>
 
       {/* decstop */}
@@ -40,7 +53,7 @@ export const HistoryBlock = () => {
             </tr>
           </thead>
           <tbody>
-            {user.vacation.history.map((item, index) => (
+            {viewVacation.map((item, index) => (
               <tr key={index}>
                 <td className="w-2/5 py-4 px-2 border-t border-dark-border-primary">{item.type}</td>
                 <td className="w-2/5 py-4 px-2 border-t border-dark-border-primary">{blockWithDays(item)}</td>
@@ -53,7 +66,7 @@ export const HistoryBlock = () => {
 
       {/* mobile */}
       <div className="hidden sm:block">
-        {user.vacation.history.map((item, index) => (
+        {viewVacation.map((item, index) => (
           <div key={index} className="border-t border-dark-border-primary py-4">
             <div className="text-dark-text-tertiary">Тип</div>
             <div className="text-subtitle1 mt-2">{item.type}</div>
@@ -64,6 +77,30 @@ export const HistoryBlock = () => {
           </div>
         ))}
       </div>
-    </>
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+        <div className="max-h-[80vh] overflow-auto">
+          <table className="min-w-full text-subtitle1">
+            <thead>
+              <tr className="text-dark-text-secondary">
+                <th className="w-2/5 py-4 px-2 border-b-1 text-left">Тип</th>
+                <th className="w-2/5 py-4 px-2 border-b-1 text-left">Даты отпуска</th>
+                <th className="w-1/5 py-4 px-2 border-b-1 text-right">Количество дней</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allVacation.map((item, index) => (
+                <tr key={index}>
+                  <td className="w-2/5 py-4 px-2 border-t border-dark-border-primary">{item.type}</td>
+                  <td className="w-2/5 py-4 px-2 border-t border-dark-border-primary">{blockWithDays(item)}</td>
+                  <td className="w-1/5 py-4 px-2 border-t border-dark-border-primary text-right">{item.countDay}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Modal>
+    </div>
   )
 }
